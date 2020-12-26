@@ -28,8 +28,8 @@
 		}
 
 		
-		public boolean nonStaticProductPredicate() {
-			return price >= 100.00;
+		public static void staticPriceUpDate(Product p) {
+			p.setPrice(p.getPrice()*1.1);
 		}
 		
 		@Override

@@ -20,9 +20,9 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 	
-		list.forEach(new PriceUpDate());
+		list.forEach(Product::staticPriceUpDate);// referencia ao metodo static
 		
-		list.forEach(System.out::println);
+		list.forEach(System.out::println); // referencia ao metodo println
 	}
 
 }
