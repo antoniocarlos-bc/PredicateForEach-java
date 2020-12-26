@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 import entities.Product;
 import util.PriceUpDate;
@@ -20,7 +21,13 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 	
-		list.forEach(Product::nonStaticPriceUpDate);// referencia ao metodo no static
+		double factor = 1.1;
+		
+		Consumer<Product> cons = p -> {
+			p.setPrice(p.getPrice() * factor);
+		};
+		
+		list.forEach(cons);// referencia ao metodo no static
 		
 		list.forEach(System.out::println); // referencia ao metodo println
 	}
