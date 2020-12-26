@@ -23,11 +23,7 @@ public class Program {
 	
 		double factor = 1.1;
 		
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-		
-		list.forEach(cons);// referencia ao metodo no static
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));// referencia ao metodo no static
 		
 		list.forEach(System.out::println); // referencia ao metodo println
 	}
